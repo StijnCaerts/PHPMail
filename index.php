@@ -6,8 +6,6 @@ if (!empty($_POST)) {
   $headers = "From: " . trim($_POST['from']);
 }
 
-
-
 ?>
 
 
@@ -22,11 +20,11 @@ if (!empty($_POST)) {
       <h1>PHPMail</h1>
 
       <?php
-      if(isset($_POST['from']) && $to != "" && $_POST['from'] != "" && $txt != ""  && mail($to,$subject,$txt,$headers)) {
-        echo '<div class="alert alert-success" role="alert">Mail successfully sent!</div>';
-      } else if (! empty($_POST)) {
-        echo '<div class="alert alert-danger" role="alert">Mail not sent!</div>';
-      }
+        if(isset($_POST['from']) && $to != "" && $_POST['from'] != "" && $txt != ""  && mail($to,$subject,$txt,$headers)) {
+          echo '<div class="alert alert-success" role="alert">Mail successfully sent!</div>';
+        } else if (! empty($_POST)) {
+          echo '<div class="alert alert-danger" role="alert">Mail not sent!</div>';
+        }
       ?>
 
       <div class="container col-md-6 col-md-offset-3">
